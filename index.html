@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Kolosalon</title>
+</head>
+<body>
+<main>
+    <div id="formular">
+        <h2>OBJEDNÁVKOVÝ FORMULÁŘ</h2>
+        <form name="form1">
+                <p>Vyberte typ a zadejte počet kusů:</p>
+                <div id="kola">
+                    <label for="horske">horské 500 Kč/den</label>
+                    <input type="checkbox" name="" id="horske">
+                    <input type="number" id="horske-pocet" value="" min="0" max="50">
+                    <br>
+                    <label for="detske">dětské 200 Kč/den</label>
+                    <input type="checkbox" name="" id="detske">
+                    <input type="number" id="detske-pocet" min="0" max="50">
+                    <br>
+                    <label for="silnicni">silniční 1 500 Kč/den</label>
+                    <input type="checkbox" name="" id="silnicni">
+                    <input type="number" id="silnicni-pocet" min="0" max="50">
+                    <br>
+                    <label for="gravel">gravel 2 500 Kč/den</label>
+                    <input type="checkbox" name="" id="gravel">
+                    <input type="number" id="gravel-pocet" min="0" max="50">
+                </div>
+                
+                <p>Na jak dlouho si přejete kolo/a půjčit?</p>
+                <select name="doba" id="doba">
+                    <option value="1">1 den</option>
+                    <option value="5">5 dní</option>
+                    <option value="7">týden</option>
+                    <option value="14">14 dní</option>
+                    <option value="30">měsíc</option>
+                </select>
+                <p>Potřebujete cyklonosič?</p>
+                <input type="radio" id="stresni" name="nosic">
+                <label for="stresni">cyklonosič střešní (+ 5 procent z celkové ceny zápůjčky navíc)</label>
+                <br>
+                <input type="radio" id="tazne" name="nosic">
+                <label for="tazne">cyklonosič na tažné zařízení (+ 10 procent z celkové ceny zápůjčky navíc)</label>
+                <br>
+                <input type="radio" id="bez" name="nosic">
+                <label for="bez">nemám zájem o cyklonosič</label>
+            <br>
+            <br>
+            <label for="rozpocet">Jaký je váš cenový návrh?</label>
+            <input type="number" id="rozpocet" onchange="vypocet(event)">
+            <p>Vejde se cena půjčení kol do Vámi zadané částky?</p>
+            <p id="rozpocet-odpoved"></p>
+            <button id="vypocetSumy" onclick="vypocet(event)">SPOČÍTAT CENU</button>
+            <br>
+            <br>
+            <label for="mail">Email</label>
+            <input type="email" id="mail" placeholder="priklad@priklad.cz" required>
+            <br>
+            <br>
+            <button type="submit" onclick="kontrolaMail()">ODESLAT FORMULÁŘ</button>
+        </form>
+    </div>
+</main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
